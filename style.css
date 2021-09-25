@@ -1,0 +1,123 @@
+.card{
+    height:500px;
+    background-image: linear-gradient(90deg,rgb(238, 217, 217),rgb(102, 98, 98));
+    width: min-content;
+    margin: auto;
+    margin-top:30px;
+}
+.card-title{
+    text-align:center;
+    color:whitesmoke;
+    background-color: black;
+}
+a{
+    text-align: center;
+}
+.image1{
+    width:300px;
+    min-height:180px;
+    max-height: 180px;
+    border-radius:5px;
+    margin-top:30px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom:30px;
+}
+.button1{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(61, 75, 87);
+    border:solid snow;
+    width: min-content;
+    position: absolute;
+    margin-top:5px;
+    margin-left:130px;
+}
+p{
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 500;
+}
+.card-body{
+padding: 0%;
+}
+body{
+    background-color: rgb(35, 40, 41);
+}
+h5{
+    border-radius:3px;
+}
+.container{
+    visibility: hidden;
+}
+body {
+    background: #34495e;
+  }
+  
+.loader {
+        position: absolute;
+      top: 50%;
+      left: 45%;
+}
+.bubble {
+        animation: expand .75s ease-in-out infinite;
+      border-radius: 20px;
+      display: inline-block;
+      transform-origin: center center;
+      margin: 0 3px;
+      width: 20px;
+      height: 20px;
+}
+.bubble:nth-child(1) {
+        background: #3ff9dc;
+}
+.bubble:nth-child(2) {
+        animation-delay: 180ms;
+        background: #3ff9dc;
+}
+.bubble:nth-child(3) {
+        animation-delay: 360ms;
+        background: #3ff9dc;
+}
+.bubble:nth-child(4) {
+        animation-delay: 540ms;
+        background: #3ff9dc;
+}
+@keyframes expand {
+        0% {
+          transform: scale(1);
+}
+    25% {
+          transform: scale(1.55);
+}
+}
+.modal-header{
+    justify-content: center;
+}  
+.modal-footer{
+    justify-content: center;
+}
+.modal-title{
+    text-transform: uppercase;
+    text-align: center;
+}
+#centi{
+    font-size: 100px;
+    text-align: center;
+    color: rgb(61, 75, 87);
+    font-family: sans-serif;
+}
+#report{
+    font-size:60px;
+    text-align: center;
+    color:rgb(61, 75, 87);
+    font-family:fantasy;
+}
+#bubble1{
+    visibility: hidden;
+    left:40%;
+}
+.card-text{
+    font-size:15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
