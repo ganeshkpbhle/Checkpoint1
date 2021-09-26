@@ -99,18 +99,19 @@ body {
 }
 .modal-title{
     text-transform: uppercase;
+    color: azure;
     text-align: center;
 }
 #centi{
     font-size: 100px;
     text-align: center;
-    color: rgb(61, 75, 87);
+    color: azure;
     font-family: sans-serif;
 }
 #report{
     font-size:60px;
     text-align: center;
-    color:rgb(61, 75, 87);
+    color: azure;
     font-family:fantasy;
 }
 #bubble1{
@@ -120,4 +121,13 @@ body {
 .card-text{
     font-size:15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.modal-content{
+    background-color:rgb(61, 75, 87);
+}
+#image2{
+    width:100px;
+    visibility:hidden;
+    margin: auto;
+    margin-left:180px;
 }

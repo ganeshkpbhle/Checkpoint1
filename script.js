@@ -2,12 +2,17 @@ var contain= document.getElementById('container1');
 var modelt=document.getElementById('model-t');
 var modeltemp=document.getElementById('centi');
 var cArr=[];
+var tempArr=[];
 var close=document.getElementById('close');
 var report=document.getElementById('report');
+var img2=document.getElementById('image2');
+var attr2=document.createAttribute('src');
 close.addEventListener('click',()=>{
     modeltemp.innerHTML="";
     modelt.innerText="";
     report.innerHTML="";
+    attr2.value="";
+    img2.setAttributeNode(attr2);
 });
 var load=document.getElementById('bubble');
 var load1=document.getElementById('bubble1');
@@ -125,7 +130,21 @@ resolve(response);
     return data.json();
 })
 .then((data)=>{
-    console.log(data);
+    if(data.weather[0].description.toString().includes("clouds")){
+        img2.style.visibility="visible";
+        attr2.value="source/clouds.png";
+        img2.setAttributeNode(attr2);
+    }
+    if(data.weather[0].description.toString().includes("rain")){
+        img2.style.visibility="visible";
+        attr2.value="source/rain.png";
+        img2.setAttributeNode(attr2);
+    }
+    if(data.weather[0].description.toString().includes("sky")){
+        img2.style.visibility="visible";
+        attr2.value="source/sun.png";
+        img2.setAttributeNode(attr2);
+    }
     modeltemp.innerHTML=Math.ceil(data.main.temp)+"&#176"+"C";
     report.innerHTML="Feelslike "+data.main.feels_like+"&#176"+"C"+"<br>"+data.weather[0].description;
 })
