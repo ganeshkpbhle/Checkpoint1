@@ -45,7 +45,6 @@ for(var i=0;i<arr.length;i++){
     col.appendChild(temp);
     row.appendChild(col);
     c+=1;
-    cArr.push({"name":arr[i].name.common,"code":arr[i].cca2});
     if(c==3){
         contain.appendChild(row);
         c=0;
@@ -80,8 +79,11 @@ const cardcreator=(obj,Id)=>{
     text.className='card-text';
     
     if("capital" in obj){
-        str+="Capital: "+obj.capital[0]+"<br>"+"Region: "+obj.region+"<br>"+"Country Code: "+obj.cca2;}
+        cArr.push({"name":obj.name.common,"code":obj.cca2,"capital":obj.capital[0]});
+        str+="Capital: "+obj.capital[0]+"<br>"+"Region: "+obj.region+"<br>"+"Country Code: "+obj.cca2;
+    }
     else{
+        cArr.push({"name":obj.name.common,"code":obj.cca2});
         str+="Capital: no capital"+"<br>"+"Region: "+obj.region+"<br>"+"Country Code: "+obj.cca2;
     }
     text.innerHTML=str;
@@ -118,7 +120,13 @@ const cardcreator=(obj,Id)=>{
 
 const Modal=()=>{
 load1.style.visibility="visible";
-var strq="https://api.openweathermap.org/data/2.5/weather?q=,,";
+var strq;
+if("capital" in cArr[event.target.id]){
+    strq="https://api.openweathermap.org/data/2.5/weather?q="+cArr[event.target.id].capital+",,";
+}
+else{
+    strq="https://api.openweathermap.org/data/2.5/weather?q=,,";
+}
 var d=cArr[event.target.id].name;modelt.innerText=d;
 strq+=cArr[event.target.id].code;
 console.log(strq);
